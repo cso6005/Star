@@ -114,9 +114,13 @@ public class ELKService {
 			
 			return "비";
 			
-		} else if (weather == "천둥번개" || weather == "낙뢰") {
+		} else if (weather == "천둥번개" || weather == "낙뢰" || weather == "뇌우") {
 		
 			return "천둥번개";
+			
+		} else if (weather == "연무" || weather == "안개" || weather == "박무") {
+			
+			return "안개";
 			
 		} else {
 			
@@ -173,7 +177,7 @@ public class ELKService {
 		RestHighLevelClient client = new RestHighLevelClient(
 				RestClient.builder(new HttpHost("127.0.0.1", 9200, "http")));
 
-		String index = "output4";
+		String index = "weather";
 		GetRequest request = new GetRequest(index, region);
 		
 		RequestOptions options = RequestOptions.DEFAULT;

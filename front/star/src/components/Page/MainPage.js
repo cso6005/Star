@@ -78,7 +78,7 @@ const Main = () => {
 
       </div>
 
-      <div class="blank" style={{ height: "530px" }}>
+      <div class="blank" style={{ height: "219px" }}>
 
       </div>
 

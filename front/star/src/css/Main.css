@@ -1,0 +1,202 @@
+.App {
+    font-family: sans-serif;
+    text-align: center;
+    /* background-color: rgba( 255, 255, 255, 0.05 ); */
+    /* background-image: url(../image/backgroundStar.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100vh; */
+}
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: Arial;
+    /* padding: 10px; */
+  }
+
+  .logo {
+    font-size: 50px;
+
+  }
+
+  .topnav a {
+    font-size: 25px;
+  }
+
+  .topnav {
+    overflow: hidden;
+  }
+
+  .menu{
+    /* 위치 배치 auto or absolute 하기 */
+    width : 1000px;
+    height : 50px;
+    /* margin: auto;  */
+    position:absolute;
+    left:25%;
+    top:50px;
+    /* margin-left:-500px;
+    margin-top:-25px; */
+  }
+
+  .topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+
+  }
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+
+  .leftcolumn {
+    float: left;
+    width: 25%;
+  }
+
+  .imgcolumn {
+    float: right;
+  }
+
+
+
+  .rightcolumn {
+    float: right;
+    width: 250px;
+    height: 300px;
+    background-color: rgba( 255, 255, 255, 0.5 );
+
+  }
+
+  .icon {
+    background-color: #aaa;
+  }
+
+  .card {
+    width: 100%;
+    height: 100%;
+    /* background-color: rgba( 255, 255, 255, 0.5 ); */
+    /* padding: 20px; */
+    /* margin-top: 20px; */
+  }
+
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .footer {
+    width: 70%;
+    margin: auto;
+    border-radius: 25px 25px 0px 0px / 25px 25px 0px 0px;    
+    padding: 20px;
+    text-align: center;
+    background-color: rgba( 255, 255, 255, 0.5 );
+    /* margin-top: 20px; */
+  }
+
+  .regionselect {
+    display: grid;
+    margin: auto;
+    height: 82px;
+    width: 70%;
+    /* grid-template-columns: 250px 150px 250px 150px auto; */
+    grid-template-columns: 30% 15% 30% 15% auto;
+    /* gap: 10px; */
+    padding: 15px;
+    background-color: rgba( 255, 255, 255, 0 );
+    /* padding-left: 100px; */
+  }
+  
+  .regionselect > div {
+    background-color: rgba( 255, 255, 255, 0 );
+    text-align: center;
+    /* padding: 10px; */
+    font-size: 30px;
+  }
+
+  .a1 {
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+
+  .aa1 {
+    background-color: rgba( 255, 255, 255, 0 );
+    color:rgb(255, 255, 255);
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    border: 0px;
+    height: 100%;
+    width: 100%;
+  }
+
+  .a2 {
+    border: 1px solid rgba(255, 255, 255, 0.6);
+  }
+
+  .regiondrop {
+    background-color: rgba( 255, 255, 255, 0 );
+    border: 0px;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    font-size: 23px;
+    color: rgb(255, 255, 255);
+  }
+
+  .option1 {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .a3 {
+    border: 1px solid rgba(255, 255, 255, 0.6);
+  }
+
+  .a4 {
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+.a5 {
+  padding-left: 50px;
+}
+
+  .button1 {
+    height: 100%;
+    width: 200px;
+    border: 0px;
+    /* background-color: rgb(215, 19, 19); */
+    background: linear-gradient(to right, rgb(94, 190, 235), rgb(84, 115, 239));
+    border-radius: 10px;
+    color: rgb(255, 255, 255);
+    font-size: 23px;
+  }
+
+  @media screen and (max-width: 800px) {
+    .leftcolumn,
+    .rightcolumn {
+      width: 100%;
+      padding: 0;
+    }
+  }
+  @media screen and (max-width: 400px) {
+    .topnav a {
+      float: none;
+      width: 100%;
+    }
+  }
+  

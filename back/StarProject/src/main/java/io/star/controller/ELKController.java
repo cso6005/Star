@@ -6,11 +6,12 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.star.model.ELKService;
+import io.star.model.dto.ObserveStarRegionDTO;
 
 @RestController
 @RequestMapping("elk")
@@ -20,13 +21,16 @@ public class ELKController {
 	@Autowired
 	private ELKService elkServcie;
 	
-	@GetMapping("/getWeather/{id}")
-	public Map<String, Object> test(@PathVariable("id") String region) throws Exception {
+	@GetMapping("/getWeather")
+	public ObserveStarRegionDTO test(@RequestParam("id") String region) throws Exception {
 		
 		System.out.println(" get api getWeather ! ");
-		Map<String, Object> result = elkServcie.getData(region);
+		System.out.println(region);
+		ObserveStarRegionDTO observeResult = elkServcie.getStarData(region);
 		
-		return result;
+		System.out.println(observeResult);
+		
+		return observeResult;
 		
 	}
 	

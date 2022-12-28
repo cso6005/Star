@@ -215,6 +215,52 @@
     font-size: 23px;
   }
 
+  .summaryRow {
+    display: grid;
+    height: 625px;
+    width: 100%;
+    grid-template-columns: 20% 20% 20% 20%;
+    grid-template-rows: 50% 50%;
+    gap: 70px 100px;
+    padding-left: 200px;
+    padding-right: 200px;
+    background-color: rgb(255, 255, 255, 0);
+  }
+  
+  .summaryRow > div {
+    display: grid;
+    width: 100%;
+    font-weight: bold;
+    color:rgb(72, 73, 130);
+    grid-template-rows: 20% 50% 20% 10%;
+    background-color: rgb(144, 144, 172, 1);
+    border-radius: 25px 25px 25px 25px;
+  }
+
+  .summaryCard {
+    border-radius: 25px 25px 25px 25px;
+  }
+
+  .summaryIcon {
+    /* vertical-align: middle; */
+    font-size: 100px;
+    color:  rgb(255, 255, 255);
+  }
+
+  .iconResult {
+    display: grid;
+    height: 156.25px;
+    width: 100%;
+    grid-template-columns: 50% 50%;
+    /* padding: 5%; */
+    /* grid-template-rows: 50% 50%; */
+    /* gap: 70px 100px; */
+    padding-top: 5%;
+    /* padding-bottom: 5%; */
+    background-color: rgb(255, 255, 255, 0);
+  }
+
+
   @media screen and (max-width: 800px) {
     .leftcolumn,
     .rightcolumn {

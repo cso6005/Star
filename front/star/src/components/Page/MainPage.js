@@ -12,20 +12,20 @@ const Main = () => {
   const [starResult, setStarResult] = useState();
 
   const weatherIcon = {
-    "맑음": <WiDaySunny className= 'aa4' />,
-    "구름조금": <WiDaySunnyOvercast className= 'aa4'/>,
-    "구름많음": <WiCloud className= 'aa4'/>,
-    "흐림": <WiCloudy className= 'aa4'/>,
-    "비": <WiRain className= 'aa4'/>,
-    "눈": <WiSnow className= 'aa4'/>,
-    "천둥번개": <WiThunderstorm className= 'aa4'/>,
-    "안개": <WiFog className= 'aa4'/>,
+    "맑음": <WiDaySunny class= 'aa4' />,
+    "구름조금": <WiDaySunnyOvercast class= 'aa4'/>,
+    "구름많음": <WiCloud class= 'aa4'/>,
+    "흐림": <WiCloudy class= 'aa4'/>,
+    "비": <WiRain class= 'aa4'/>,
+    "눈": <WiSnow class= 'aa4'/>,
+    "천둥번개": <WiThunderstorm class= 'aa4'/>,
+    "안개": <WiFog class= 'aa4'/>,
     "null": <input class="aaa4" type="text" value="업데이트중" />
   }
 
   const getWeather = async () => {
     await axios
-    .get("http://127.0.0.1:80/elk/getWeather", {
+    .get("/api/v1/elk/getWeather", {
       params: {
         id: selectRegion
       }
@@ -47,7 +47,7 @@ const Main = () => {
   });
 
   return (
-    <div className="App" >
+    <div class="App" >
 
       <div class="blank" style={{ height: "180px" }}></div>
 
@@ -66,12 +66,11 @@ const Main = () => {
               <h2>별자리</h2>
               <h5>별 보고 싶당</h5>
 
-              {/* <div class="icon"  /> */}
             </div>
           </div>
 
           <div class="imgcolumn">
-            <img className="BigDipper" alt="1" src={BigDipper} style={{ height: "300px", width: "200px", borderRadius: "15px 0px 0px 15px / 15px 0px 0px 15px"    }}/>
+            <img class="BigDipper" alt="1" src={BigDipper} style={{ height: "300px", width: "200px", borderRadius: "15px 0px 0px 15px / 15px 0px 0px 15px"    }}/>
           </div>
 
         </div>

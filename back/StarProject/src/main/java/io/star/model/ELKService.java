@@ -226,7 +226,7 @@ public class ELKService {
 		RestHighLevelClient client = new RestHighLevelClient(
 				RestClient.builder(new HttpHost("127.0.0.1", 9200, "http")));
 
-		String index = "output4";
+		String index = "weather";
 
 		Map<String, Object> sourceAsMap = null;
 		List<Map<String, Object>> sourceList = new ArrayList<Map<String, Object>>();

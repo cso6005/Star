@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <div className="App" >
+    <div class="App" >
 
       <div class="topnav" >
 
@@ -11,7 +11,7 @@ const Header = () => {
 
         <div class="menu">
           <Link to="#">About Star</Link>
-          <Link to="#">Observing Stars</Link>
+          <Link to="/summary">Observing Stars</Link>
           <Link to="#">About Constellations</Link>
           <Link to="#">Observation Info</Link>
         </div>  

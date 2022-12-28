@@ -1,13 +1,12 @@
 package io.star.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -41,8 +40,16 @@ public class ELKController {
 		
 		System.out.println(" get api getWeatherAll ! ");
 		List<Map<String, Object>> result = elkServcie.getWeatherAllData();
+		List<Map<String, Object>> summaryResult = new ArrayList<Map<String, Object>>();
 		
-		return result;
+		for(Map<String, Object> i : result) {
+			if(i.get("이름").equals("수원") || i.get("이름").equals("서울") || i.get("이름").equals("강릉") || i.get("이름").equals("동해") || i.get("이름").equals("대구") || i.get("이름").equals("광주") || i.get("이름").equals("태백") || i.get("이름").equals("서귀포")) {
+				System.out.println(i.get("이름"));
+				summaryResult.add(i);
+			}
+		}
+		
+		return summaryResult;
 		
 	}
 	

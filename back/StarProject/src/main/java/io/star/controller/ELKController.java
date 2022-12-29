@@ -22,7 +22,7 @@ public class ELKController {
 	private ELKService elkServcie;
 	
 	@GetMapping("/getWeather")
-	public ObserveStarRegionDTO test(@RequestParam("id") String region) throws Exception {
+	public ObserveStarRegionDTO getWeather(@RequestParam("id") String region) throws Exception {
 		
 		System.out.println(" get api getWeather ! ");
 		System.out.println(region);

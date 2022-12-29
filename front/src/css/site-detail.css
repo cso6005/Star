@@ -1,0 +1,27 @@
+.App {
+    font-family: sans-serif;
+    text-align: center;
+    background-color: rgba( 255, 255, 255, 0.05);
+}
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: Arial;
+  }
+
+  .site-info {
+
+    padding: 14px 16px;
+    width: 500px;
+    background-color: rgba(255, 255, 255, 0.605);
+    text-align: center;
+    margin: 0 auto;
+
+  }
+
+  .name {
+
+    font-size: 25px;
+
+  }

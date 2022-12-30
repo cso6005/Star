@@ -85,8 +85,8 @@ public class ELKService {
 		}
 		
 		// 별 관측 결과
-		float distance = Float.valueOf((String) elkData.get("시정km"));
-		String cloud = (String) elkData.get("운량1/10");
+		float distance = Float.valueOf((String) elkData.get("시정"));
+		String cloud = (String) elkData.get("운량");
 		
 		if (cloud != null) {
 			starResult = getStarResult(cloud, distance);
@@ -106,7 +106,7 @@ public class ELKService {
 		
 		System.out.println(weather);
 		
-		if (weather.contains("눈") || weather.contains("진눈깨비")) {
+		if (weather.contains("눈") || weather.contains("진눈깨비") || weather.contains("약한 눈 단속적")) {
 			
 			return "눈";
 			

@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import SelectRegion from './components/Page/SelectRegionPage';
+import DetailRegion from './components/Page/DetailRegionPage';
 import './index.css'
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Routes} from "react-router-dom";
@@ -15,7 +16,7 @@ root.render(
   // </React.StrictMode>
 
   <div>
-    <div class="App" style={{ backgroundImage: `url(${background})` ,
+    <div className="App" style={{ backgroundImage: `url(${background})` ,
     backgroundPosition: 'top center',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
@@ -26,6 +27,7 @@ root.render(
     <Routes>
       <Route path="/" exact element={<App />} />
       <Route path="/summary" exact element={<SelectRegion />} />
+      <Route path="/detailRegion" exact element={<DetailRegion />} />
     </Routes>
   </BrowserRouter>
 {/* </div> */}

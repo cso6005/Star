@@ -48,14 +48,14 @@ function SelectRegion() {
     return (
         <div>
             <Header />
-            <div class="App">
-                <div class="blank" style={{ height: "50px" }} />
-                <div class="summaryRow">
+            <div className="App">
+                <div className="blank" style={{ height: "50px" }} />
+                <div className="summaryRow" >
                     {summaryWeather.map((i) => (
                         <SummaryCard data={i} date={{time}} key={i.이름} />
                     ))}
                 </div>
-                <div class="blank" style={{ height: "150px" }} />
+                <div className="blank" style={{ height: "150px" }} />
             </div>
         </div>
     );

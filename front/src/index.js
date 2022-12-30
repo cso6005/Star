@@ -1,12 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+
 import ObservationSiteComponent from './components/ObservationSite/observationSiteComponent';
-import SiteDetail from './components/ObservationSite/SiteDetailComponent'
+import SiteDetailComponent from './components/ObservationSite/SiteDetailComponent'
+import ConstellationsComponent from './components/Constellations/ConstellationsComponent';
+
 import reportWebVitals from './reportWebVitals';
 import "./index.css"
 import { BrowserRouter, Route, Routes} from "react-router-dom";
 import background from './image/backgroundStar.jpg'
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 
@@ -27,7 +31,8 @@ root.render(
     <Routes>
       <Route path="/" exact element={<App />} />
       <Route path="/observationSite" exact element={<ObservationSiteComponent />} />
-      <Route path="/site/detail" exact element={< SiteDetail/>} />
+      <Route path="/site/detail" exact element={< SiteDetailComponent/>} />
+      <Route path="/constellations" exact element={< ConstellationsComponent/>} />
 
 
     </Routes>

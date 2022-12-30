@@ -98,6 +98,11 @@
     /* margin-top: 20px; */
   }
 
+  .right a {
+    color: rgb(0, 0, 0);
+    text-decoration: dashed;
+  }
+
   .row:after {
     content: "";
     display: table;

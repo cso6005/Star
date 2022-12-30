@@ -1,5 +1,6 @@
 import "../../css/Main.css";
 import BigDipper from "../../image/BigDipper.jpg";
+import { Link } from "react-router-dom";
 
 
 const Main = () => {
@@ -16,20 +17,21 @@ const Main = () => {
         </div>
 
         <div class="right">
-
-          <div class="rightcolumn">
-            <div class="card">
-
-              <h2>별자리</h2>
-              <h5>별 보고 싶당</h5>
-
-              {/* <div class="icon"  /> */}
+          <Link to = "/constellations">
+            <div class="rightcolumn">
+              <div class="card">
+                <h2>별자리</h2>
+                <h5>별 보고 싶당</h5>
+              </div>
+            
             </div>
-          </div>
+          
 
-          <div class="imgcolumn">
-            <img className="BigDipper" alt="1" src={BigDipper} style={{ height: "300px", width: "200px", borderRadius: "15px 0px 0px 15px / 15px 0px 0px 15px"    }}/>
-          </div>
+            <div class="imgcolumn">
+              <img className="BigDipper" alt="1" src={BigDipper} style={{ height: "300px", width: "200px", borderRadius: "15px 0px 0px 15px / 15px 0px 0px 15px"    }}/>
+            </div>
+          
+          </Link>
 
         </div>
 

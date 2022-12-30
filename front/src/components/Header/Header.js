@@ -34,7 +34,7 @@ const Header = () => {
             <div class="main-menu">
               <Link to="#">About Star</Link>
               <Link to="#">Observing Stars</Link>
-              <Link to="#">About Constellations</Link>
+              <Link to="/constellations">About Constellations</Link>
             </div>
 
             <div

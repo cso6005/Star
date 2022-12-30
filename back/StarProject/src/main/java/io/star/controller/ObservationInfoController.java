@@ -21,7 +21,7 @@ public class ObservationInfoController {
 	private ObservationInfoService observationInfoService;
 	
 	@GetMapping("/get-stie")
-	public List<ObservationSiteDTO> getObservationSiteList (@RequestParam("id") String regionName) throws Exception {
+	public List<ObservationSiteDTO> getObservationSite (@RequestParam("id") String regionName) throws Exception {
 		
 		System.out.println("get info");
 		System.out.println(regionName);

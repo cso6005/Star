@@ -1,6 +1,5 @@
 package io.star.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -21,12 +20,12 @@ public class ELKController {
 	
 	@Autowired
 	private ELKService elkServcie;
-
+	
 	@GetMapping("/getWeather")
-	public ObserveStarRegionDTO test(@RequestParam("id") String region) throws Exception {
+	public ObserveStarRegionDTO getWeather(@RequestParam("id") String region) throws Exception {
+		
 		System.out.println(" get api getWeather ! ");
 		System.out.println(region);
-		
 		ObserveStarRegionDTO observeResult = elkServcie.getStarData(region);
 		
 		System.out.println(observeResult);
@@ -40,16 +39,8 @@ public class ELKController {
 		
 		System.out.println(" get api getWeatherAll ! ");
 		List<Map<String, Object>> result = elkServcie.getWeatherAllData();
-		List<Map<String, Object>> summaryResult = new ArrayList<Map<String, Object>>();
 		
-		for(Map<String, Object> i : result) {
-			if(i.get("이름").equals("수원") || i.get("이름").equals("서울") || i.get("이름").equals("강릉") || i.get("이름").equals("동해") || i.get("이름").equals("대구") || i.get("이름").equals("광주") || i.get("이름").equals("태백") || i.get("이름").equals("서귀포")) {
-				System.out.println(i.get("이름"));
-				summaryResult.add(i);
-			}
-		}
-		
-		return summaryResult;
+		return result;
 		
 	}
 	

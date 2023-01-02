@@ -20,7 +20,7 @@ const Main = () => {
           <Link to = "/constellations">
             <div class="rightcolumn">
               <div class="card">
-                <h2>별자리</h2>
+                <h2>별자 리</h2>
                 <h5>별 보고 싶당</h5>
               </div>
             

@@ -15,11 +15,12 @@
 
   }
 
+  .topnav a {
+    font-size: 25px;
+  }
 
   .topnav {
     overflow: hidden;
-    width: 80%;
-    margin: auto; 
   }
 
   .App hr {
@@ -42,10 +43,6 @@
     top:4%;
     /* margin-left:-500px;
     margin-top:-25px; */
-  }
-
-  .topnav a{
-    font-size: 25px;
   }
 
   .topnav a {
@@ -109,22 +106,254 @@
     clear: both;
   }
 
-  /* .sub-menu {
-
-    width: 100%;
-    height: 100%;
-
-  } */
-
   .footer {
     width: 70%;
-    height: 30%;
     margin: auto;
     border-radius: 25px 25px 0px 0px / 25px 25px 0px 0px;    
     padding: 20px;
     text-align: center;
-    background: #ddd;
+    background-color: rgba(255, 255, 255, 0.377);
     /* margin-top: 20px; */
+  }
+
+  .regionselect {
+    display: grid;
+    margin: auto;
+    height: 82px;
+    width: 100%;
+    /* grid-template-columns: 250px 150px 250px 150px auto; */
+    grid-template-columns: 30% 15% 30% 10% auto;
+    /* gap: 10px; */
+    padding: 15px;
+    /* margin-left: 100px; */
+    background-color: rgba( 255, 255, 255, 0 );
+    /* padding-left: 100px; */
+  }
+  
+  .regionselect > div {
+    background-color: rgba( 255, 255, 255, 0 );
+    text-align: center;
+    /* padding: 10px; */
+    font-size: 30px;
+  }
+
+  .a1 {
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+
+  .aa1 {
+    background-color: rgba( 255, 255, 255, 0 );
+    color:rgb(255, 255, 255);
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    border: 0px;
+    height: 100%;
+    width: 100%;
+  }
+
+  .a2 {
+    border: 1px solid rgba(255, 255, 255, 0.6);
+  }
+
+  .regiondrop {
+    background-color: rgba( 255, 255, 255, 0 );
+    border: 0px;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    font-size: 23px;
+    color: rgb(255, 255, 255);
+  }
+
+  .option1 {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .a3 {
+    border: 1px solid rgba(255, 255, 255, 0.6);
+  }
+
+  .aa3 {
+    background-color: rgba( 255, 255, 255, 0 );
+    color:rgb(255, 255, 255);
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    border: 0px;
+    height: 100%;
+    width: 100%;
+  }
+
+  .a4 {
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    color:rgb(255, 255, 255);
+  }
+
+  .aa4 {
+    vertical-align: middle;
+    font-size: 32px;
+    color:  rgb(255, 255, 255);
+  }
+
+  .aaa4 {
+    background-color: rgba( 255, 255, 255, 0 );
+    color:rgb(255, 255, 255);
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    border: 0px;
+    height: 100%;
+    width: 100%;
+  }
+
+.a5 {
+  padding-left: 30px;
+}
+
+  .button1 {
+    height: 100%;
+    width: 100%;
+    border: 0px;
+    background: linear-gradient(to right, rgb(94, 190, 235), rgb(84, 115, 239));
+    border-radius: 10px;
+    color: rgb(255, 255, 255);
+    font-size: 23px;
+  }
+
+  .summaryRow {
+    display: grid;
+    height: 625px;
+    width: 100%;
+    grid-template-columns: 20% 20% 20% 20%;
+    grid-template-rows: 50% 50%;
+    gap: 70px 100px;
+    padding-left: 200px;
+    padding-right: 200px;
+    background-color: rgb(255, 255, 255, 0);
+  }
+  
+  .summaryRow > div {
+    display: grid;
+    width: 100%;
+    font-weight: bold;
+    color:rgb(72, 73, 130);
+    grid-template-rows: 20% 50% 20% 10%;
+    background-color: rgb(144, 144, 172, 1);
+    border-radius: 25px 25px 25px 25px;
+  }
+
+  .summaryCard {
+    border-radius: 25px 25px 25px 25px;
+  }
+
+  .summaryIcon {
+    /* vertical-align: middle; */
+    font-size: 100px;
+    color:  rgb(255, 255, 255);
+  }
+
+  .iconResult {
+    display: grid;
+    height: 156.25px;
+    width: 100%;
+    grid-template-columns: 50% 50%;
+    /* padding: 5%; */
+    /* grid-template-rows: 50% 50%; */
+    /* gap: 70px 100px; */
+    padding-top: 5%;
+    /* padding-bottom: 5%; */
+    background-color: rgb(255, 255, 255, 0);
+  }
+
+  .detailCard {
+    display: grid;
+    font-family: Arial;
+    height: 500px;
+    width: 100%;
+    grid-template-columns: 50% 50%;
+    padding-left: 500px;
+    padding-right: 400px;
+    background-color: rgb(255, 255, 255, 0);
+  }
+
+  .detailCard1 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url(../image/은하수2.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 30px 30px 30px 30px;
+  }
+
+  .detailCard2 {
+    display: grid;
+    position: relative;
+    background-color: #222831;
+    grid-template-rows: auto 45%;
+    top: 5%;
+    height: 90%;
+    width: 80%;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+  }
+
+  .detailCard3 {
+    display: grid;
+    position: relative;
+    background-color: #222831;
+    grid-template-columns: 50% 50%;
+    top: 5%;
+    height: 90%;
+    width: 100%;
+    border-top-right-radius: 30px;
+  }
+
+  .detailCard3ColumnLeft {
+    color: white;
+    font-weight: bold;
+    white-space: pre-wrap;
+    line-height: 180%;
+    text-align: left;
+    padding-left: 20%;
+    padding-top: 8%;
+    font-size: 20px;
+  }
+
+  .detailCard3ColumnRight {
+    color: white;
+    white-space: pre-wrap;
+    line-height: 180%;
+    text-align: right;
+    padding-right: 10%;
+    padding-top: 8%;
+    font-size: 20px;
+  }
+
+  .detailCard2Row {
+    display: grid;
+    position: relative;
+    background-color: #222831;
+    grid-template-rows: 65% 35%;
+    border-bottom-right-radius: 30px;
+  }
+
+  .summaryIcon2 {
+    font-size: 160px;
+    color:  rgb(255, 255, 255);
+  }
+
+  .detailSumarryButton {
+    height: 50%;
+    width: 80%;
+    border: 0px;
+    background: linear-gradient(to right, rgb(94, 190, 235), rgb(84, 115, 239));
+    border-radius: 10px;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
   }
 
   @media screen and (max-width: 800px) {

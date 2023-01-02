@@ -85,8 +85,8 @@ public class ELKService {
 		}
 		
 		// 별 관측 결과
-		float distance = Float.valueOf((String) elkData.get("시정km"));
-		String cloud = (String) elkData.get("운량1/10");
+		float distance = Float.valueOf((String) elkData.get("시정"));
+		String cloud = (String) elkData.get("운량");
 		
 		if (cloud != null) {
 			starResult = getStarResult(cloud, distance);
@@ -106,7 +106,7 @@ public class ELKService {
 		
 		System.out.println(weather);
 		
-		if (weather.contains("눈") || weather.contains("진눈깨비")) {
+		if (weather.contains("눈") || weather.contains("진눈깨비") || weather.contains("약한 눈 단속적")) {
 			
 			return "눈";
 			
@@ -114,9 +114,13 @@ public class ELKService {
 			
 			return "비";
 			
-		} else if (weather == "천둥번개" || weather == "낙뢰") {
+		} else if (weather == "천둥번개" || weather == "낙뢰" || weather == "뇌우") {
 		
 			return "천둥번개";
+			
+		} else if (weather == "연무" || weather == "안개" || weather == "박무") {
+			
+			return "안개";
 			
 		} else {
 			
@@ -137,7 +141,7 @@ public class ELKService {
 				starResult = "별 보기 쉽지 않아요";
 			}
 			
-			starResult = "별이 잘 안 보여요";
+			starResult = "별이 잘  보여요";
 			break;
 			
 		case "1": case "2":
@@ -173,7 +177,7 @@ public class ELKService {
 		RestHighLevelClient client = new RestHighLevelClient(
 				RestClient.builder(new HttpHost("127.0.0.1", 9200, "http")));
 
-		String index = "output4";
+		String index = "weather";
 		GetRequest request = new GetRequest(index, region);
 		
 		RequestOptions options = RequestOptions.DEFAULT;
@@ -222,7 +226,7 @@ public class ELKService {
 		RestHighLevelClient client = new RestHighLevelClient(
 				RestClient.builder(new HttpHost("127.0.0.1", 9200, "http")));
 
-		String index = "output4";
+		String index = "weather";
 
 		Map<String, Object> sourceAsMap = null;
 		List<Map<String, Object>> sourceList = new ArrayList<Map<String, Object>>();

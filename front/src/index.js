@@ -1,15 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-
-import ObservationSiteComponent from './components/ObservationSite/observationSiteComponent';
-import SiteDetailComponent from './components/ObservationSite/SiteDetailComponent'
-import ConstellationsComponent from './components/Constellations/ConstellationsComponent';
-
+import SelectRegion from './components/Page/SelectRegionPage';
+import DetailRegion from './components/Page/DetailRegionPage';
+import './index.css'
 import reportWebVitals from './reportWebVitals';
-import "./index.css"
 import { BrowserRouter, Route, Routes} from "react-router-dom";
-import background from './image/backgroundStar.jpg'
+import background from './image/backgroundStar2.jpg'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -19,24 +16,21 @@ root.render(
   // </React.StrictMode>
 
   <div>
-
     <div className="App" style={{ backgroundImage: `url(${background})` ,
-    backgroundPosition: 'center',
+    backgroundPosition: 'top center',
     backgroundRepeat: 'no-repeat',
-    backgroundSize: '100%',
-    backgroundColor: 'rgba( 255, 255, 255, 0.5 )',
-    }}>
-
+    backgroundSize: 'cover',
+    backgroundAttachment: 'fixed'
+    // backgroundColor: 'rgba( 255, 255, 255, 0.3 )',
+    }}>                                                                                      
   <BrowserRouter>
     <Routes>
       <Route path="/" exact element={<App />} />
-      <Route path="/observationSite" exact element={<ObservationSiteComponent />} />
-      <Route path="/site/detail" exact element={< SiteDetailComponent/>} />
-      <Route path="/constellations" exact element={< ConstellationsComponent/>} />
-
-
+      <Route path="/summary" exact element={<SelectRegion />} />
+      <Route path="/detailRegion" exact element={<DetailRegion />} />
     </Routes>
   </BrowserRouter>
+{/* </div> */}
 </div>
 </div>
 

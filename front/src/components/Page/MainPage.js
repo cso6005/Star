@@ -11,7 +11,7 @@ const Main = () => {
 
       <div class="row">
         <div class="leftcolumn">
-            <h2>홈페이지 소개</h2>
+            <h2>홈페이지   소개</h2>
             <h5>콕콕콕라면콕</h5>
             <div class="fakeimg" style={{ height: "100px" }} />
         </div>

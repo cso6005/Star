@@ -4,8 +4,9 @@ import { useLocation, useNavigate } from "react-router-dom";
 import Header from "../Header/Header"
 import "../../css/Main.css";
 import { TfiLocationPin } from "react-icons/tfi"
-import { BsFillCloudsFill, BsFillSunFill, BsFillCloudSunFill, BsFillCloudFill, BsFillCloudRainFill, BsFillCloudSnowFill, BsFillCloudLightningFill, BsStars } from "react-icons/bs"
-import { WiFog } from "react-icons/wi"
+import { BsFillCloudsFill, BsFillSunFill, BsFillCloudSunFill, BsFillCloudFill, BsFillCloudRainFill, BsFillCloudSnowFill, BsFillCloudLightningFill} from "react-icons/bs"
+import { WiFog, WiMoonFull, WiMoonWaxingCrescent2, WiMoonWaxingCrescent4, WiMoonFirstQuarter, WiMoonWaxingGibbous5,
+      WiMoonWaningGibbous2, WiMoonThirdQuarter, WiMoonWaningCrescent3, WiMoonWaningCrescent5 } from "react-icons/wi"
 
 const DetailRegion = () => {
 
@@ -14,6 +15,7 @@ const DetailRegion = () => {
 
     const [time, setTime] = useState();
     const [starResult, setStarResult] = useState();
+    const [moonResult, setMoonResult] = useState();
 
     let now = new Date();
     const week = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
@@ -30,6 +32,19 @@ const DetailRegion = () => {
         "안개": <WiFog className= 'summaryIcon'/>,
         "null": <input className="aaa4" type="text" value="업데이트중" style={{color:"rgb(72, 73, 130)", paddingBottom:"30%"}} />
       };
+    
+    const moonIcon = {
+        "달삭": <WiMoonFull className= 'moonIcon' style={{color:"Gray"}}/>,
+        "초승달": <WiMoonWaxingCrescent2 className= 'moonIcon'/>,
+        "초상달": <WiMoonWaxingCrescent4 className= 'moonIcon'/>,
+        "상현달": <WiMoonFirstQuarter className= 'moonIcon'/>,
+        "상보달": <WiMoonWaxingGibbous5 className= 'moonIcon'/>,
+        "보름달": <WiMoonFull className= 'moonIcon'/>,
+        "보하달": <WiMoonWaningGibbous2 className= 'moonIcon'/>,
+        "하현달": <WiMoonThirdQuarter className= 'moonIcon'/>,
+        "하금달": <WiMoonWaningCrescent3 className= 'moonIcon'/>,
+        "그믐달": <WiMoonWaningCrescent5 className= 'moonIcon'/>
+    }
 
     const todayTime = () => {
         const month = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
@@ -44,6 +59,7 @@ const DetailRegion = () => {
     };
 
     const getWeatherResult = async () => {
+        console.log(location.state.data)
         await axios
         .get("/api/v1/elk/getWeather", {
           params: {
@@ -55,9 +71,22 @@ const DetailRegion = () => {
         })
       }
 
+      const getMoon = async () => {
+        await axios
+        .get("/api/v1/moon/cycle", {
+          params: {
+            date: now.getDate()
+          }
+        })
+        .then((response) => {
+          setMoonResult(response.data)
+        })
+      }
+
     useEffect(()=>{
         todayTime();
         getWeatherResult();
+        getMoon();
     },[]);
 
     return (
@@ -105,7 +134,9 @@ const DetailRegion = () => {
                         </div>
                     </div>
                 <div className="detailCard2Row">
-                    <div className="moon"></div>
+                    <div className="moon">
+                        {moonIcon[moonResult]}
+                    </div>
                     <div >
                         <button className="detailSumarryButton" onClick={()=>{
                             navigate("/summary")
@@ -114,7 +145,7 @@ const DetailRegion = () => {
                 </div>
                 </div>
             </div>
-            <div className="blank" style={{ height: "205px" }} />
+            <div className="blank" style={{ height: "221px" }} />
         </div>
     );
 };

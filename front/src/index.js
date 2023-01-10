@@ -11,6 +11,7 @@ import DetailRegion from './components/Page/DetailRegionPage';
 import ObservationSiteComponent from './components/ObservationSite/observationSiteComponent';
 import SiteDetailComponent from './components/ObservationSite/SiteDetailComponent'
 import ConstellationsComponent from './components/Constellations/ConstellationsComponent';
+import StarPage from './components/AboutStar/StarPage';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -22,15 +23,16 @@ root.render(
 
   <div>
     <div className="App" style={{ backgroundImage: `url(${background})` ,
-    backgroundPosition: 'top center',
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: '100%',
-    backgroundAttachment: 'fixed'
-    // backgroundColor: 'rgba( 255, 255, 255, 0.3 )',
+      backgroundPosition: 'top center',
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover',
+      backgroundAttachment: 'fixed'
+      // backgroundColor: 'rgba( 255, 255, 255, 0.3 )',
     }}>                                                                                      
     <BrowserRouter>
       <Routes>
         <Route path="/" exact element={<App />} />
+        <Route path="/aboutStar" exact element={<StarPage />} />
         <Route path="/summary" exact element={<SelectRegion />} />
         <Route path="/detailRegion" exact element={<DetailRegion />} />
         <Route path="/observationSite" exact element={<ObservationSiteComponent />} />

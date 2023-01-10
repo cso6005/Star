@@ -32,8 +32,8 @@ const Header = () => {
 
           <div class="dropdown-menu" ref={dropdownRef}>
             <div class="main-menu">
-              <Link to="#">About Star</Link>
-              <Link to="#">Observing Stars</Link>
+              <Link to="/aboutStar">About Star</Link>
+              <Link to="/summary">Observing Stars</Link>
               <Link to="/constellations">About Constellations</Link>
             </div>
 

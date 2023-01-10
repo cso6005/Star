@@ -55,7 +55,7 @@ function SelectRegion() {
                         <SummaryCard data={i} date={{time}} key={i.이름} />
                     ))}
                 </div>
-                <div className="blank" style={{ height: "150px" }} />
+                <div className="blank" style={{ height: "166px" }} />
             </div>
         </div>
     );

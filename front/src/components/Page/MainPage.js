@@ -1,15 +1,28 @@
 import "../../css/Main.css";
 import BigDipper from "../../image/BigDipper.jpg";
+import { useNavigate } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { WiDaySunny, WiDaySunnyOvercast, WiCloud, WiCloudy, WiRain, WiThunderstorm, WiSnow, WiFog } from "react-icons/wi"
 
 const Main = () => {
 
+  const navigate = useNavigate();
+
   const [selectRegion, setSelectRegion] = useState("서울");
   const [dateRegion, setDateRegion] = useState();
   const [regionWeather, setRegionWeather] = useState();
   const [starResult, setStarResult] = useState();
+  const [detailRegionData, setDetailRegionData] = useState({
+    날짜: "",
+    습도: "",
+    시정: "",
+    운량: "",
+    이름: "",
+    중하운량: "",
+    체감온도: "",
+    현재기온: "",
+    현재일기: "" });
 
   const weatherIcon = {
     "맑음": <WiDaySunny class= 'aa4' />,
@@ -22,6 +35,11 @@ const Main = () => {
     "안개": <WiFog class= 'aa4'/>,
     "null": <input class="aaa4" type="text" value="업데이트중" />
   }
+
+  const changeRegion = (e) => {
+    setSelectRegion(e.target.value);
+  };
+
 
   const getWeather = async () => {
     await axios
@@ -38,9 +56,35 @@ const Main = () => {
     })
   }
 
-  const changeRegion = (e) => {
-    setSelectRegion(e.target.value);
-  };
+  const mainToDetail = async () => {
+    await axios
+    .get("/api/v1/elk/getWeatherAll")
+    .then((response) => {
+      response.data.map((i) => {
+       if(i.이름 === selectRegion){
+          navigate(
+            "/detailRegion",
+            {
+              state: {
+                data: {
+                  날짜: i.날짜,
+                  습도: i.습도,
+                  시정: i.시정,
+                  운량: i.운량,
+                  이름: i.이름,
+                  중하운량: i.중하운량,
+                  체감온도: i.체감온도,
+                  현재기온: i.현재기온,
+                  현재일기: i.현재일기 }
+              }
+            }
+          )
+        }
+      }
+      )
+    })
+  }
+
 
   useEffect(() => {
     getWeather();
@@ -77,7 +121,7 @@ const Main = () => {
 
       </div>
 
-      <div class="blank" style={{ height: "219px" }}>
+      <div class="blank" style={{ height: "235px" }}>
 
       </div>
 
@@ -110,7 +154,7 @@ const Main = () => {
             }
           </div>
           <div class="a5">
-            <button class='button1'>검색</button>
+            <button class='button1' onClick={mainToDetail}>검색</button>
           </div>
         </div>
       </div>

@@ -1,6 +1,5 @@
 package io.star.model;
 
-import java.util.List;
 
 import javax.transaction.Transactional;
 

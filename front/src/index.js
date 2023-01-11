@@ -12,6 +12,7 @@ import ObservationSiteComponent from './components/ObservationSite/observationSi
 import SiteDetailComponent from './components/ObservationSite/SiteDetailComponent'
 import ConstellationsComponent from './components/Constellations/ConstellationsComponent';
 import StarPage from './components/AboutStar/StarPage';
+import Camera from './components/ObservationSite/Camera';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -38,6 +39,7 @@ root.render(
         <Route path="/observationSite" exact element={<ObservationSiteComponent />} />
         <Route path="/site/detail" exact element={< SiteDetailComponent/>} />
         <Route path="/constellations" exact element={< ConstellationsComponent/>} />
+        <Route path="/camera" exact element={< Camera/>} />
       </Routes>
     </BrowserRouter>
   </div>

@@ -408,6 +408,52 @@
     background-color: rgba(255, 255, 255, 0.298);
   }
 
+  .imgButton {
+    height: 100%;
+    width: 100%;
+    border: 0px;
+    background: linear-gradient(to right, rgb(110, 148, 168), rgb(3, 14, 61));
+    border-radius: 10px;
+    color: rgb(255, 255, 255);
+    font-size: 23px;
+  }
+
+  .imgButton:hover {
+    background: linear-gradient(to right, rgb(183, 148, 103), rgb(170, 100, 9));
+  }
+
+  .galaxyImage {
+    width: 80%;
+  }
+
+  .starKinds {
+    display: grid;
+    position: relative;
+    background-color: rgb(255, 255, 255, 0);
+    grid-template-rows: 10% 90%;
+    /* left: 13%; */
+    height: 605px;
+    width: 100%;
+  }
+
+  .starKindsTop {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    position: relative;
+    background-image: #222831;
+    color: white;
+  }
+
+  .starKindsButton {
+    background-color: rgb(255, 255, 255, 0);
+    border-color: rgb(255, 255, 255, 0);
+    color: white;
+  }
+
+  .starKindsButton:hover {
+    background-color: rgba(255, 255, 255, 0.298);
+  }
+
   @media screen and (max-width: 800px) {
     .leftcolumn,
     .rightcolumn {

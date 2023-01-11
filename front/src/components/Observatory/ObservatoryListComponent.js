@@ -16,7 +16,7 @@ import korea from '../../geo/koreaTopo.json'
 
 const featureData = feature(korea, korea.objects['korea'])
 
-const SiteMapListComponent = () => {
+const ObservatoryListComponent= () => {
  
   const [siteList, setSiteList] = useState("");
   const navigate = useNavigate();
@@ -25,17 +25,13 @@ const SiteMapListComponent = () => {
  
   const printD3 = () => {
  
-    // 지도 svg의 너비와 높이
     const width = 350
     const height = 450
  
- 
-    // 메르카토르 투영법 설정
     const projection = d3.geoMercator().scale(1).translate([0, 0])
     const path = d3.geoPath().projection(projection)
     const bounds = path.bounds(featureData)
     
-    // svg의 크기에 따른 지도의 크기와 위치값을 설정
     const dx = bounds[1][0] - bounds[0][0]
     const dy = bounds[1][1] - bounds[0][1]
     const x = (bounds[0][0] + bounds[1][0]) / 2
@@ -45,7 +41,6 @@ const SiteMapListComponent = () => {
  
     projection.scale(scale).translate(translate)
  
-    // svg를 만들고
     const svg = d3
       .select(chart.current)
       .append('svg')
@@ -54,13 +49,12 @@ const SiteMapListComponent = () => {
 
     const mapLayer = svg.append('g')
 
-
     const handleClick = (d) => {
 
       const region = d.properties.name;
 
 
-      axios.get("/api/v1/observation-info/get-site", {
+      axios.get("/api/v1/observation-info/get-observatory", {
         params: {
           id: region 
         }
@@ -109,7 +103,7 @@ const SiteMapListComponent = () => {
         console.log(site)
 
         navigate(
-          '/site/detail',
+          '/observatory/detail',
           {
             state: {
               siteId: site.siteId,
@@ -141,7 +135,7 @@ const SiteMapListComponent = () => {
                 <div className="detailCard1">
 
                     <div style={{fontSize:"20px", color:"white", fontWeight:"bold", paddingTop:"5%", paddingLeft:"10%", textAlign:"left", lineHeight:"120%"}}>
-                      별 보기 좋은 명소
+                      별 보기 좋은 천문대
                       <div className="blank" style={{ height: "25px" }} />
                       <div ref={chart} />
                     </div>
@@ -151,7 +145,7 @@ const SiteMapListComponent = () => {
                 <div className="detailCard2">
 
                 <div style={{fontSize:"20px", color:"white", fontWeight:"bold", paddingTop:"5%", paddingLeft:"7%", textAlign:"left", lineHeight:"120%"}}>
-                  관측 명소 리스트
+                  천문대 명소 리스트
                 </div>
                     <div style={{fontSize:"17px", color:"white", fontWeight:"bold", paddingTop:"10%", textAlign:"center", lineHeight:"120%"}}>
 
@@ -176,4 +170,4 @@ const SiteMapListComponent = () => {
   )
 }
  
-export default React.memo(SiteMapListComponent); 
+export default React.memo(ObservatoryListComponent); 

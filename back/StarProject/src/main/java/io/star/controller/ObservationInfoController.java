@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.star.model.ObservationInfoService;
+import io.star.model.dto.ConstellationDTO;
 import io.star.model.dto.ObservationSiteDTO;
+import io.star.model.dto.ObservatorySiteDTO;
 
 @RestController
 @RequestMapping("observation-info")
@@ -20,7 +22,7 @@ public class ObservationInfoController {
 	@Autowired
 	private ObservationInfoService observationInfoService;
 	
-	@GetMapping("/get-stie")
+	@GetMapping("/get-site")
 	public List<ObservationSiteDTO> getObservationSite (@RequestParam("id") String regionName) throws Exception {
 		
 		System.out.println("get info");
@@ -30,6 +32,42 @@ public class ObservationInfoController {
 		
 		return observationSiteList;
 		
+		
+	}
+	
+	@GetMapping("/get-observatory")
+	public List<ObservatorySiteDTO> getObservatorySite (@RequestParam("id") String regionName) throws Exception {
+		
+		System.out.println("get info");
+		System.out.println(regionName);
+		
+		List<ObservatorySiteDTO> observatorySiteList = observationInfoService.getObservatorySite(regionName);
+		
+		return observatorySiteList;
+		
+		
+	}
+	
+	@GetMapping("/get-constellation-list")
+	public List<ConstellationDTO> getConstellationList (@RequestParam("id") String season) throws Exception {
+		
+		System.out.println("get info");
+		
+		List<ConstellationDTO> constellationList = observationInfoService.getConstellationList(season);
+		
+		return constellationList;
+		
+		
+	}
+	
+	@GetMapping("/get-constellation")
+	public ConstellationDTO getConstellation (@RequestParam("id") int constellationId) throws Exception {
+		
+		System.out.println("get info");
+		
+		ConstellationDTO constellation = observationInfoService.getConstellation(constellationId);
+		
+		return constellation;
 		
 	}
 	

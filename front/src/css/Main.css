@@ -35,7 +35,7 @@
 
   .menu{
     /* 위치 배치 auto or absolute 하기 */
-    width : 1200px;
+    width : 1000px;
     height : 50px;
     /* margin: auto;  */
     position:absolute;

@@ -1,0 +1,86 @@
+
+
+  .detailCard {
+    display: grid;
+    font-family: Arial;
+    height: 500px;
+    width: 100%;
+    grid-template-columns: 55% 65%;
+    padding-left: 317px;
+    padding-right: 448px;
+    background-color: rgb(255, 255, 255, 0);
+  }
+
+  .detailCard1 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url(../image/은하수2.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 30px 30px 30px 30px;
+  }
+
+  .detailCard2 {
+    display: grid;
+    position: relative;
+    background-color: #222831;
+    grid-template-rows: auto 100%;
+    top: 5%;
+    height: 90%;
+    width: 100%;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+  }
+
+  .detailCard3 {
+    display: grid;
+    position: relative;
+    background-color: #222831;
+    grid-template-columns: 34% 65%;
+    top: 10%;
+    height: 90%;
+    width: 100%;
+    border-top-right-radius: 30px;
+  }
+
+  .detailCard3ColumnLeft {
+    color: white;
+    font-weight: bold;
+    white-space: pre-wrap;
+    line-height: 180%;
+    text-align: left;
+    padding-left: 15%;
+    padding-top: 10%;
+    font-size: 16px;
+  }
+
+  .detailCard3ColumnRight {
+    color: white;
+    white-space: pre-wrap;
+    line-height: 180%;
+    text-align: right;
+    padding-right: 5.5%;
+    padding-top: 5%;
+    font-size: 16px;
+  }
+
+  .detailCard2Row {
+    display: grid;
+    position: relative;
+    background-color: #222831;
+    grid-template-rows: 65% 35%;
+    border-bottom-right-radius: 30px;
+  }
+
+  .back-icon {
+    padding-left: 3%;
+    padding-top: 5%;
+    width: 30px;
+    float: left;
+  }
+
+  .back-icon img {
+    height: 20px;
+    width: 20px;
+    float: left;
+    filter: opacity(0.5) drop-shadow(0 0 0 #ffffff);
+  }

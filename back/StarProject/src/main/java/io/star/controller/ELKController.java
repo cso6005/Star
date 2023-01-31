@@ -25,8 +25,6 @@ public class ELKController {
 	@GetMapping("/getWeather")
 	public ObserveStarRegionDTO getWeather(@RequestParam("id") String region) throws Exception {
 		
-		System.out.println(" get api getWeather ! ");
-		System.out.println(region);
 		ObserveStarRegionDTO observeResult = elkServcie.getStarData(region);
 		
 		System.out.println(observeResult);

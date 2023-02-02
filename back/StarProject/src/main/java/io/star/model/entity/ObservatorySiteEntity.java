@@ -23,8 +23,8 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Builder
-@Table(name = "observation_site")
-public class ObservationSiteEntity {
+@Table(name = "observatory_site")
+public class ObservatorySiteEntity {
 	
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "site_id")

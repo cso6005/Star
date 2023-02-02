@@ -20,33 +20,27 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor
 @Builder
-@Table(name = "observation_site")
-public class ObservationSiteEntity {
+@Table(name = "constellation")
+public class ConstellationEntity {
 	
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "site_id")
-	private int siteId;
+	@Column(name = "constellation_id")
+	private int constellationId;
 	
-	@Column(name = "site_name")
-	private String siteName;
+	@Column(name = "constellation_name")
+	private String constellationName;
 	
-	@Column(name = "site_info")
-	private String siteInfo;
+	@Column(name = "constellation_info")
+	private String constellationInfo;
 	
-	@Column(name = "site_x")
-	private Double siteX;
+	@Column(name = "constellation_legend")
+	private String constellationLegend;
 	
-	@Column(name = "site_y")
-	private Double siteY;
-	
-	@Column(name = "site_address")
-	private String siteAddress;
-	
-	@ManyToOne(targetEntity = RegionEntity.class, fetch = FetchType.LAZY)
-	@JoinColumn(name = "region_id")
-	private RegionEntity regionId;
+	@ManyToOne(targetEntity = SeasonEntity.class, fetch = FetchType.LAZY)
+	@JoinColumn(name = "season_id")
+	private SeasonEntity seasonId;
 
 }

@@ -18,7 +18,7 @@ import BackIcon from '../../image/back-icon.png';
 
 const featureData = feature(korea, korea.objects['korea'])
 
-const SiteDetailComponent = () => {
+const ObservatoryDetailComponent = () => {
 
     const location = useLocation();
 
@@ -111,9 +111,9 @@ const SiteDetailComponent = () => {
             <div className="blank" style={{ height: "120px" }} />
             <div className="detailCard">
                 <div className="detailCard1">
-                <div className="back-icon"><Link to="/siteMapList"><img src={BackIcon} /></Link></div>
+                <div className="back-icon"><Link to="/observatory"><img src={BackIcon} /></Link></div>
                     <div style={{fontSize:"20px", color:"white", fontWeight:"bold", paddingTop:"5%", paddingLeft:"10%", textAlign:"left", lineHeight:"120%"}}>
-                      별 보기 좋은 명소
+                      별 보기 좋은 천문대
                       <div className="blank" style={{ height: "25px" }} />
                       <div ref={chart} />
                     </div>
@@ -148,4 +148,4 @@ const SiteDetailComponent = () => {
 };
 
 
-export default React.memo(SiteDetailComponent);
+export default React.memo(ObservatoryDetailComponent);

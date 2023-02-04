@@ -7,7 +7,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.2.1",
-    "d3": "^7.8.0",
+    "d3": "5.9",
     "dompurify": "^2.4.1",
     "react": "^18.2.0",
     "react-crud-icons": "^1.2.1",

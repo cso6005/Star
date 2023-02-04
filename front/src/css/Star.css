@@ -1,0 +1,89 @@
+.starBox {
+    display: grid;
+    position: relative;
+    background-color: rgb(255, 255, 255, 0);
+    grid-template-rows: 15% 85%;
+    left: 10%;
+    height: 711px;
+    width: 80%;
+}
+  
+.starBoxTop {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    position: relative;
+    background-image: linear-gradient(rgb(26, 23, 23, 0.91), rgba(26, 23, 23, 0.7)), url(../image/은하수2.jpg);
+    color: white;
+    z-index: 1;
+    border-radius: 30px;
+}
+
+.starButton {
+    position: relative;
+    background-color: rgb(255, 255, 255, 0);
+    border-color: rgb(255, 255, 255, 0);
+    color: white;
+    font-size: 20px;
+    top: 20%;
+    height: 50%;
+    width: 25%;
+    border-radius: 25px;
+}
+
+.starButton:hover {
+    background-color: rgba(255, 255, 255, 0.298);
+}
+
+.starKinds {
+    display: grid;
+    position: relative;
+    background-color: rgb(255, 255, 255, 0);
+    grid-template-rows: 10% 90%;
+    height: 605px;
+    width: 100%;
+}
+  
+.starKindsTop {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    position: relative;
+    background-image: #222831;
+    color: white;
+}
+
+.starBoxContents {
+    position: relative;
+    background-color: #222831;
+    left: 2.5%;
+    top: -3%;
+    width: 95%;
+    border-radius: 25px;
+}
+  
+.starKindsButton {
+    background-color: rgb(255, 255, 255, 0);
+    border-color: rgb(255, 255, 255, 0);
+    color: white;
+}
+  
+.starKindsButton:hover {
+    background-color: rgba(255, 255, 255, 0.298);
+}
+
+.GalaxyImgButton {
+    height: 100%;
+    width: 100%;
+    border: 0px;
+    background: linear-gradient(to right, rgb(110, 148, 168), rgb(3, 14, 61));
+    border-radius: 10px;
+    color: rgb(255, 255, 255);
+    font-size: 23px;
+}
+  
+.GalaxyImgButton:hover {
+    background: linear-gradient(to right, rgb(183, 148, 103), rgb(170, 100, 9));
+}
+  
+.galaxyImage {
+    width: 80%;
+}

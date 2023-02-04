@@ -5,14 +5,12 @@ const ObservationSiteComponent = () => {
   return (
     <div>
       <Header></Header>
-      <br/><br/><br/>
+      <br />
+      <br />
+      <br />
       <SiteMapList></SiteMapList>
-
     </div>
-
- 
   );
 };
-
 
 export default ObservationSiteComponent;

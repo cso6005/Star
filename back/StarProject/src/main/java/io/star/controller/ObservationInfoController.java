@@ -25,51 +25,32 @@ public class ObservationInfoController {
 	@GetMapping("/get-site")
 	public List<ObservationSiteDTO> getObservationSite (@RequestParam("id") String regionName) throws Exception {
 		
-		System.out.println("get info");
-		System.out.println(regionName);
-		
 		List<ObservationSiteDTO> observationSiteList = observationInfoService.getObservationSite(regionName);
 		
 		return observationSiteList;
-		
-		
 	}
 	
 	@GetMapping("/get-observatory")
 	public List<ObservatorySiteDTO> getObservatorySite (@RequestParam("id") String regionName) throws Exception {
 		
-		System.out.println("get info");
-		System.out.println(regionName);
-		
 		List<ObservatorySiteDTO> observatorySiteList = observationInfoService.getObservatorySite(regionName);
 		
 		return observatorySiteList;
-		
-		
 	}
 	
 	@GetMapping("/get-constellation-list")
-	public List<ConstellationDTO> getConstellationList (@RequestParam("id") String season) throws Exception {
+	public List<ConstellationDTO> getConstellationList (@RequestParam("id") String seasonName) throws Exception {
 		
-		System.out.println("get info");
-		
-		List<ConstellationDTO> constellationList = observationInfoService.getConstellationList(season);
+		List<ConstellationDTO> constellationList = observationInfoService.getConstellationList(seasonName);
 		
 		return constellationList;
-		
-		
 	}
 	
 	@GetMapping("/get-constellation")
 	public ConstellationDTO getConstellation (@RequestParam("id") int constellationId) throws Exception {
 		
-		System.out.println("get info");
-		
 		ConstellationDTO constellation = observationInfoService.getConstellation(constellationId);
 		
 		return constellation;
-		
 	}
-	
-
 }

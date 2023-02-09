@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.web.WebAppConfiguration;
 
@@ -12,22 +11,14 @@ import org.springframework.test.context.web.WebAppConfiguration;
 @SpringBootTest
 class StarProjectApplicationTests {
 
-
-	
-	@Test
+//	@Test
 	public void test2() throws IOException {
-		
 		
 		Date now = new Date();
 
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		String nowDate = dateFormat.format(now);
 		
-		System.out.println("안뇽");
-
 		System.out.println(nowDate);
-		
 	}
-
-
 }

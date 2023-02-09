@@ -67,15 +67,18 @@ public class ELKService {
 	
 	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 	
-	/** 도시 별 별의 관측 정보 api **/
+	/** 도시 별 별의 관측 정보 API 
+	 * @throws IOException **/
 	@Transactional
-	public ObserveStarRegionDTO getStarData(String region) throws Exception {
+	public ObserveStarRegionDTO getStarData(String regionName) throws IOException {
 		
 		long startTime = System.currentTimeMillis();
-		Map<String, Object> elkData = getData(region);
+		Map<String, Object> elkData = getData(regionName);
 				
 		if (elkData == null) {
-			LOGGER.info("[ELKService][getData] - 클라이언트에서 존재하지 않는 도시 '{}'데이터 조회 시도 :: Response = null :: {}ms", region, (System.currentTimeMillis() - startTime));
+			
+			LOGGER.info("[ELKService][getData] - 클라이언트에서 존재하지 않는 도시 '{}'데이터 조회 시도 :: Response = null :: {}ms", regionName, (System.currentTimeMillis() - startTime));
+			
 			return null;
 		}
 		
@@ -93,7 +96,7 @@ public class ELKService {
 		if (weather != null) {
 			weatherResult = getWeatherResult(weather);
 		} else {
-			LOGGER.info("[ELKService][getData] - 도시 {} '현재일기' 데이터 없음. 업데이트 필요. :: (Response) weather = null :: {}ms", region, (System.currentTimeMillis() - startTime));
+			LOGGER.info("[ELKService][getData] - 도시 {} '현재일기' 데이터 없음. 업데이트 필요. :: (Response) weather = null :: {}ms", regionName, (System.currentTimeMillis() - startTime));
 		}
 		
 		// 별 관측 결과
@@ -103,13 +106,12 @@ public class ELKService {
 		if (cloud != null) {
 			starResult = getStarResult(cloud, distance);
 		} else {
-			LOGGER.info("[ELKService][getData] - 도시 {} '구름' 데이터 없으므로 별 관측 결과 응답 불가. 업데이트 필요. :: (Response) starResult = null :: {}ms", region, (System.currentTimeMillis() - startTime));			
+			LOGGER.info("[ELKService][getData] - 도시 {} '구름' 데이터 없으므로 별 관측 결과 응답 불가. 업데이트 필요. :: (Response) starResult = null :: {}ms", regionName, (System.currentTimeMillis() - startTime));			
 		}
 		
-		ObserveStarRegionDTO observeResult = new ObserveStarRegionDTO(nowDate, region, starResult, weatherResult);
+		ObserveStarRegionDTO observeResult = new ObserveStarRegionDTO(nowDate, regionName, starResult, weatherResult);
 				
 		return observeResult;
-		
 	}
 	
 	// 현재날씨 정보
@@ -118,24 +120,19 @@ public class ELKService {
 		if (weather.contains("눈") || weather.contains("진눈깨비") || weather.contains("약한 눈 단속적")) {
 			
 			return "눈";
-			
 		} else if (weather == "소나기" || weather.contains("비")) {
 			
 			return "비";
-			
 		} else if (weather == "천둥번개" || weather == "낙뢰" || weather == "뇌우") {
 		
 			return "천둥번개";
-			
 		} else if (weather == "연무" || weather == "안개" || weather == "박무") {
 			
 			return "안개";
-			
 		} else {
 			
 			return weather;
 		}
-		
 	}
 	
 	// 별 관측 분석
@@ -145,7 +142,6 @@ public class ELKService {
 		
 		switch (cloud) {
 		case "0":
-			
 			if (distance < 20) {
 				starResult = "별 보기 쉽지 않아요";
 			}
@@ -177,12 +173,11 @@ public class ELKService {
 		
 		return starResult;
 	}
-	
 
-	/** Elastic Search 에서 도시 별 관측 정보 수집 api 
+	/** Elastic Search 에서 도시 별 관측 정보 수집
 	 * @throws IOException **/
 	@Transactional
-	public Map<String, Object> getData(String region) throws IOException {
+	public Map<String, Object> getData(String regionName) throws IOException {
 		
 		long startTime = System.currentTimeMillis();
 
@@ -190,7 +185,7 @@ public class ELKService {
 				RestClient.builder(new HttpHost("127.0.0.1", 9200, "http")));
 
 		String index = "weather";
-		GetRequest request = new GetRequest(index, region);
+		GetRequest request = new GetRequest(index, regionName);
 		
 		RequestOptions options = RequestOptions.DEFAULT;
 		
@@ -198,11 +193,11 @@ public class ELKService {
 		
 		try {
 			GetResponse response = client.get(request, options);
+			
 			if (response.isExists()) {
 				sourceAsMap = response.getSourceAsMap();			
 			} 
 		} catch (IOException e) {
-			// 서버 꺼졌을 때
 			LOGGER.warn("[ELKService][getData] - ElasticSearch 9200 서버 꺼져있음. :: Response = ResponseEntity<ErrorResponse> :: {}ms", (System.currentTimeMillis() - startTime));
 			throw new CustomException(UserErrorCode.ELK_NOT_CONNECT);
 		} finally {
@@ -213,7 +208,7 @@ public class ELKService {
 	}
 	
 	
-	/** Elastic Search 모든 도시 날씨 조회 api 
+	/** Elastic Search 모든 도시 날씨 정보 수집
 	 * @throws IOException **/
 	@Transactional
 	public List<Map<String, Object>> getWeatherAllData() throws IOException  {
@@ -229,7 +224,6 @@ public class ELKService {
 		List<Map<String, Object>> sourceList = new ArrayList<Map<String, Object>>();
 
 		try {
-
 			SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
 
 			searchSourceBuilder.query(QueryBuilders.matchAllQuery());
@@ -246,16 +240,13 @@ public class ELKService {
 				sourceAsMap = hit.getSourceAsMap();
 				sourceList.add(sourceAsMap);
 			}
-			
 		} catch (IOException e) {
-			// 서버 꺼졌을 때
 			LOGGER.warn("[ELKService][getData] - ElasticSearch 9200 서버 꺼져있음. :: Response = ResponseEntity<ErrorResponse> :: {}ms", (System.currentTimeMillis() - startTime));
 			throw new CustomException(UserErrorCode.ELK_NOT_CONNECT);
 		} finally {
 			client.close();
 		}
-
+		
 		return sourceList;
 	}
-
 }

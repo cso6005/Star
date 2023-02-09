@@ -23,33 +23,25 @@ public class ELKController {
 	private ELKService elkServcie;
 	
 	@GetMapping("/getWeather")
-	public ObserveStarRegionDTO getWeather(@RequestParam("id") String region) throws Exception {
+	public ObserveStarRegionDTO getWeather(@RequestParam("id") String regionName) throws Exception {
 		
-		ObserveStarRegionDTO observeResult = elkServcie.getStarData(region);
-		
-		System.out.println(observeResult);
+		ObserveStarRegionDTO observeResult = elkServcie.getStarData(regionName);
 		
 		return observeResult;
-		
 	}
 	
 	@GetMapping("/getWeatherAll")
-	public List<Map<String, Object>> getWeatherAllData() throws Exception {
+	public List<Map<String, Object>> getWeatherAll() throws Exception {
 		
 		List<Map<String, Object>> result = elkServcie.getWeatherAllData();
 		List<Map<String, Object>> summaryResult = new ArrayList<Map<String, Object>>();
 		
 		for(Map<String, Object> i : result) {
 			if(i.get("이름").equals("수원") || i.get("이름").equals("서울") || i.get("이름").equals("강릉") || i.get("이름").equals("동해") || i.get("이름").equals("대구") || i.get("이름").equals("광주") || i.get("이름").equals("태백") || i.get("이름").equals("서귀포")) {
-				System.out.println(i.get("이름"));
 				summaryResult.add(i);
 			}
 		}
 		
 		return summaryResult;
-		
-		
 	}
-	
-
 }

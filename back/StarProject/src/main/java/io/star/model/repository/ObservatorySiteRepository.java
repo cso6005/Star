@@ -13,5 +13,4 @@ public interface ObservatorySiteRepository extends JpaRepository<ObservatorySite
 
 	List<ObservatorySiteEntity> findAllByRegionId(RegionEntity regionId);
 	
-	
 }

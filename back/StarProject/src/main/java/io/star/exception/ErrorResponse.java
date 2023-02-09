@@ -2,8 +2,6 @@ package io.star.exception;
 
 import java.util.Date;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.http.ResponseEntity;
 
 import lombok.Builder;
@@ -15,9 +13,9 @@ public class ErrorResponse {
 	
 	private String timestamp;
 
-	private int status; // 에러 코드 번호
-
-	private String error; // 에러명
+	private int status; 
+	
+	private String error;
 
 	private String message;
 	
@@ -34,8 +32,7 @@ public class ErrorResponse {
 						.path(requestURL).build());
 	}
 	
-	
-	public static ResponseEntity<ErrorResponse> toUserErrorResponse(UserErrorCode e, String requestURL) {
+	public static ResponseEntity<Object> toUserErrorResponse(UserErrorCode e, String requestURL) {
 		
 		return ResponseEntity.status(e.getHttpStatus())
 				.body(ErrorResponse.builder()
@@ -45,5 +42,4 @@ public class ErrorResponse {
 						.message(e.getMessage())
 						.path(requestURL).build());
 	}
-
 }

@@ -42,14 +42,13 @@ const SiteMapListComponent = () => {
       const region = d.properties.name;
 
       axios
-        .get("/api/v1/observation-info/get-site", {
+        .get("/api/v1/observation-info/observation/site", {
           params: {
             id: region,
           },
         })
         .then((response) => {
           if (response.data == 0) {
-            console.log("데이터 없음");
           }
           setSiteList(response.data);
         })
@@ -76,7 +75,7 @@ const SiteMapListComponent = () => {
     siteList.forEach((site) => {
       if (site.siteId == id) {
         navigate(
-          "/site/detail",
+          "/observation-info/observation/site/detail",
           {
             state: {
               siteId: site.siteId,

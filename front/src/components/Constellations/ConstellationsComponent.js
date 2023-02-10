@@ -16,7 +16,7 @@ const ConstellationsComponent = () => {
 
   const seasonDefalut = () => {
     axios
-      .get("/api/v1/observation-info/get-constellation-list", {
+      .get("/api/v1/observation-info/constellation/list", {
         params: {
           id: "봄",
         },
@@ -33,7 +33,7 @@ const ConstellationsComponent = () => {
     setCheck(0);
     const oId = o.target.id;
     axios
-      .get("/api/v1/observation-info/get-constellation-list", {
+      .get("/api/v1/observation-info/constellation/list", {
         params: {
           id: oId,
         },
@@ -43,7 +43,6 @@ const ConstellationsComponent = () => {
         setConstellationList(response.data);
       })
       .catch((error) => {
-        console.log(error);
       })
       .finally(() => {
         setSeason(oId);
@@ -53,7 +52,7 @@ const ConstellationsComponent = () => {
   const getConstellation = (id) => {
     setCheck(0);
     axios
-      .get("/api/v1/observation-info/get-constellation", {
+      .get("/api/v1/observation-info/constellation/detail", {
         params: {
           id: id,
         },
@@ -62,13 +61,12 @@ const ConstellationsComponent = () => {
         setConstellation(response.data);
       })
       .catch((error) => {
-        console.log(error);
       });
   };
 
   const contentsClick = (o) => {
     let oId = o.target.id;
-    if (oId === 1) {
+    if (oId == 1) {
       setCheck(1);
     } else {
       setCheck(0);

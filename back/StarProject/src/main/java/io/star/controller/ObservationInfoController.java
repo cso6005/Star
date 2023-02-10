@@ -22,7 +22,7 @@ public class ObservationInfoController {
 	@Autowired
 	private ObservationInfoService observationInfoService;
 	
-	@GetMapping("/get-site")
+	@GetMapping("/observation/site")
 	public List<ObservationSiteDTO> getObservationSite (@RequestParam("id") String regionName) throws Exception {
 		
 		List<ObservationSiteDTO> observationSiteList = observationInfoService.getObservationSite(regionName);
@@ -30,7 +30,7 @@ public class ObservationInfoController {
 		return observationSiteList;
 	}
 	
-	@GetMapping("/get-observatory")
+	@GetMapping("/observatory/site")
 	public List<ObservatorySiteDTO> getObservatorySite (@RequestParam("id") String regionName) throws Exception {
 		
 		List<ObservatorySiteDTO> observatorySiteList = observationInfoService.getObservatorySite(regionName);
@@ -38,7 +38,7 @@ public class ObservationInfoController {
 		return observatorySiteList;
 	}
 	
-	@GetMapping("/get-constellation-list")
+	@GetMapping("/constellation/list")
 	public List<ConstellationDTO> getConstellationList (@RequestParam("id") String seasonName) throws Exception {
 		
 		List<ConstellationDTO> constellationList = observationInfoService.getConstellationList(seasonName);
@@ -46,7 +46,7 @@ public class ObservationInfoController {
 		return constellationList;
 	}
 	
-	@GetMapping("/get-constellation")
+	@GetMapping("/constellation/detail")
 	public ConstellationDTO getConstellation (@RequestParam("id") int constellationId) throws Exception {
 		
 		ConstellationDTO constellation = observationInfoService.getConstellation(constellationId);

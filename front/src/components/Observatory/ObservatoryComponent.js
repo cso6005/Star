@@ -91,7 +91,6 @@ const ObservatoryComponent = () => {
   };
 
   useEffect(() => {
-    console.log(map);
     printD3();
   }, [map]);
 
@@ -102,7 +101,7 @@ const ObservatoryComponent = () => {
       <div className="detailCard">
         <div className="detailCard1">
           <div className="back-icon">
-            <Link to="/observationSite">
+            <Link to="/observation-info/observation/site">
               <img src={BackIcon} />
             </Link>
           </div>

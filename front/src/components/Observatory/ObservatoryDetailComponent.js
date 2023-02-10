@@ -77,7 +77,6 @@ const ObservatoryDetailComponent = () => {
       .attr("opacity", 0)
       .attr("xlink:href", require("../../image/maker.png"))
       .on("click", (d) => {
-        console.log(d);
       })
       .transition()
       .ease(d3.easeElastic)
@@ -98,7 +97,7 @@ const ObservatoryDetailComponent = () => {
       <div className="detailCard">
         <div className="detailCard1">
           <div className="back-icon">
-            <Link to="/observatory">
+            <Link to="/observation-info/observatory/site">
               <img src={BackIcon} />
             </Link>
           </div>

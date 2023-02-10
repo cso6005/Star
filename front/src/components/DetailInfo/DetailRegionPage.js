@@ -57,7 +57,7 @@ const DetailRegion = () => {
 
   const getWeatherResult = async () => {
     await axios
-      .get("/api/v1/elk/getWeather", {
+      .get("/api/v1/observing-info/region", {
         params: {
           id: location.state.data.이름,
         },
@@ -69,7 +69,7 @@ const DetailRegion = () => {
 
   const getMoon = async () => {
     await axios
-      .get("/api/v1/moon/cycle", {
+      .get("/api/v1/observing-info/moon", {
         params: {
           date: now.getDate(),
         },
@@ -129,7 +129,7 @@ const DetailRegion = () => {
             <div className="moon">{moonIcon[moonResult]}</div>
             <div>
               <button className="ChangeCityButton" onClick={() => {
-                  navigate("/summary");
+                  navigate("/observing/region/all");
                 }}>
                 <TfiLocationPin /> Change Location
               </button>

@@ -31,7 +31,7 @@ const Main = () => {
 
   const getWeather = async () => {
     await axios
-      .get("/api/v1/elk/getWeather", {
+      .get("/api/v1/observing-info/region", {
         params: {
           id: selectRegion,
         },
@@ -40,15 +40,14 @@ const Main = () => {
         setDateRegion(response.data.date);
         setStarResult(response.data.starResult);
         setRegionWeather(response.data.weather);
-        console.log(response.data);
       });
   };
 
   const mainToDetail = async () => {
-    await axios.get("/api/v1/elk/getWeatherAll").then((response) => {
+    await axios.get("/api/v1/observing-info/region/all").then((response) => {
       response.data.map((i) => {
         if (i.이름 === selectRegion) {
-          navigate("/detailRegion", {
+          navigate("/observing/region", {
             state: {
               data: {
                 날짜: i.날짜,

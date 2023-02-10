@@ -24,8 +24,8 @@ const Header = () => {
         <div class="menu">
           <div class="dropdown-menu" ref={dropdownRef}>
             <div class="main-menu">
-              <Link to="/aboutStar">About Star</Link>
-              <Link to="/summary">Observing Stars</Link>
+              <Link to="/star">About Star</Link>
+              <Link to="/observing/region/all">Observing Stars</Link>
               <Link to="/constellations">About Constellations</Link>
             </div>
             <div class="sub-menu" onMouseOver={() => setMenuDropDownOpen(true)}>

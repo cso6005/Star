@@ -11,29 +11,33 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.star.model.ELKService;
+import io.star.model.ObservingInfoService;
+import io.star.model.MoonService;
 import io.star.model.dto.ObserveStarRegionDTO;
 
 @RestController
-@RequestMapping("elk")
+@RequestMapping("observing-info")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
-public class ELKController {
+public class ObservingInfoController {
 	
 	@Autowired
-	private ELKService elkServcie;
+	private ObservingInfoService observingInfoServcie;
 	
-	@GetMapping("/getWeather")
+	@Autowired
+	private MoonService moonService;
+	
+	@GetMapping("/region")
 	public ObserveStarRegionDTO getWeather(@RequestParam("id") String regionName) throws Exception {
 		
-		ObserveStarRegionDTO observeResult = elkServcie.getStarData(regionName);
+		ObserveStarRegionDTO observeResult = observingInfoServcie.getStarData(regionName);
 		
 		return observeResult;
 	}
 	
-	@GetMapping("/getWeatherAll")
+	@GetMapping("/region/all")
 	public List<Map<String, Object>> getWeatherAll() throws Exception {
 		
-		List<Map<String, Object>> result = elkServcie.getWeatherAllData();
+		List<Map<String, Object>> result = observingInfoServcie.getWeatherAllData();
 		List<Map<String, Object>> summaryResult = new ArrayList<Map<String, Object>>();
 		
 		for(Map<String, Object> i : result) {
@@ -43,5 +47,19 @@ public class ELKController {
 		}
 		
 		return summaryResult;
+	}
+	
+	@GetMapping("/moon")
+	public String getMoon(@RequestParam("date") int num) {
+		
+		String moonName = moonService.getMoonName();
+		
+		if(moonService.getMoonDay(moonName) == num) {
+			return moonName;
+		}
+		
+		String moon = moonService.getLunarCycle(moonName, num);
+			
+		return moon;
 	}
 }

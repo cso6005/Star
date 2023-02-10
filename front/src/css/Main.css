@@ -29,11 +29,11 @@
 }
 
 .menu{
-  width : 1000px;
-  height : 50px;
-  position:absolute;
-  left:25%;
-  top:4%;
+  width: 1000px;
+  height: 50px;
+  position: absolute;
+  left: 25%;
+  top: 5%;
 }
 
 .topnav a {

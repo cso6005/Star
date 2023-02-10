@@ -38,7 +38,7 @@ function SummaryCard(props) {
 
   return (
     <div className="summaryCard" onClick={() => {
-        navigate("/detailRegion", {
+        navigate("/observing/region", {
           state: {
             data: props.data,
           },

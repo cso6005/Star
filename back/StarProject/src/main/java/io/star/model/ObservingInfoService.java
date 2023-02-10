@@ -63,7 +63,7 @@ import io.star.exception.UserErrorCode;
 import io.star.model.dto.ObserveStarRegionDTO;
 
 @Service
-public class ELKService {
+public class ObservingInfoService {
 	
 	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 	

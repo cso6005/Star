@@ -31,9 +31,8 @@ function SelectRegion() {
   };
 
   const data = async () => {
-    await axios.get("/api/v1/elk/getWeatherAll").then((response) => {
+    await axios.get("/api/v1/observing-info/region/all").then((response) => {
       setSummaryWeather(response.data);
-      console.log(response.data);
     });
   };
 

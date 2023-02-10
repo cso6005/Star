@@ -36,8 +36,6 @@ public class MoonService {
 		String newMoonName = null;
 		
 		int totalMoonCount = moonRepository.findCountByMoonName(moonName);
-		System.out.println("----1-----");
-		System.out.println(totalMoonCount);
 		
 		if(moonName.equals("상보달")) {
 			if(totalMoonCount >= 4) {
@@ -90,10 +88,8 @@ public class MoonService {
 				newMoonName = "상보달";
 			}
 		}
-		System.out.println("------2------");
-		System.out.println(newMoonName);
-		return updateCount(moonName, newMoonName, totalMoonCount, over, num);
 		
+		return updateCount(moonName, newMoonName, totalMoonCount, over, num);
 	}
 	
 	@Transactional
@@ -105,21 +101,18 @@ public class MoonService {
 		if(over == false) {
 			moonEntity.setCount((totalMoonCount += 1));
 			MoonEntity moon = moonRepository.save(moonEntity);
-			System.out.println("------3------");
-			System.out.println(moon);
 			
 			return moon.getMoonName();
 		} else if(over == true) {
 			moonEntity.setCount(0);
-			MoonEntity moon2 = moonRepository.save(moonEntity);
-			System.out.println("-------4-------");
-			System.out.println(moon2);
+			moonRepository.save(moonEntity);
 		}
+		
 		return newMoonName;
 	}
 
 	public int getMoonDay(String moonName) {
+		
 		return moonRepository.findDayByMoonName(moonName);
 	}
-	
 }

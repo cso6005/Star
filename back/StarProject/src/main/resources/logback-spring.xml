@@ -3,7 +3,7 @@
   <property name="moduleId" value="star_project"/><!-- moduleId는 프로젝트가 설치된 폴더명 또는 구분할 수 있는 식별자이면 됨 -->
   <property name="type" value="BACK"/><!-- 로그파일명을 구성하는 인자 -->
   <property name="logback" value="logback"/><!-- log를 저장할 최종 디렉토리명 -->
-  <property name="logdir" value="C:/SWClass/LogFiles"/>
+  <property name="logdir" value="C:/SWClass/LogFiles"/><!-- 각자 디렉토리로 바꿔주기 -->
 
   <!-- console -->
   <appender name="console" class="ch.qos.logback.core.ConsoleAppender">

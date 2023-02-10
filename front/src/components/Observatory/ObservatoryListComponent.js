@@ -42,19 +42,17 @@ const ObservatoryListComponent = () => {
       const region = d.properties.name;
 
       axios
-        .get("/api/v1/observation-info/get-observatory", {
+        .get("/api/v1/observation-info/observatory/site", {
           params: {
             id: region,
           },
         })
         .then((response) => {
           if (response.data == 0) {
-            console.log("데이터 없음");
           }
           setSiteList(response.data);
         })
         .catch((error) => {
-          console.log(error);
         });
     };
 
@@ -76,7 +74,7 @@ const ObservatoryListComponent = () => {
     siteList.forEach((site) => {
       if (site.siteId == id) {
         navigate(
-          "/observatory/detail",
+          "/observation-info/observatory/site/detail",
           {
             state: {
               siteId: site.siteId,

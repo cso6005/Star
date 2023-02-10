@@ -1,0 +1,22 @@
+
+  .map {
+
+    width : 500px;
+    height : 500px;
+
+  }
+
+  .country:hover {
+    fill: rgba(63, 174, 238, 0.953);
+
+  }
+
+  .country {
+    fill: rgba(253, 253, 253, 0.893);
+    stroke: black;
+    stroke-width: 0.05px;
+
+  }
+
+
+  

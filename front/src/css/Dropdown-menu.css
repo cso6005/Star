@@ -1,0 +1,15 @@
+.d-menu {
+    width : 40%;
+    height : 100%;
+    position: absolute;
+    padding-bottom: 1em;
+    left:65%;
+    top:125%;
+  }
+  
+  .d-menu a :not(font-size) {
+    background-color: aqua;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    display: block;
+  }

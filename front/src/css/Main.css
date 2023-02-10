@@ -1,0 +1,243 @@
+.App {
+    font-family: sans-serif;
+    text-align: center;
+    background-color: rgba( 255, 255, 255, 0.05 );
+}
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: Arial;
+  }
+
+.logo {
+  font-size: 50px;
+
+}
+
+.topnav a {
+  font-size: 25px;
+}
+
+.topnav {
+  overflow: hidden;
+}
+
+.App hr {
+    width: 80%;
+    margin: auto; 
+}
+
+.menu{
+  width: 1000px;
+  height: 50px;
+  position: absolute;
+  left: 25%;
+  top: 5%;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+
+}
+
+.topnav a:hover {
+  color: rgba(255, 255, 255, 0.693);
+  text-decoration: dashed;
+
+}
+
+.leftcolumn {
+  float: left;
+  width: 50%;
+}
+
+.imgcolumn {
+  float: right;
+}
+
+.rightcolumn {
+  float: right;
+  width: 250px;
+  height: 300px;
+  background-color: rgba( 255, 255, 255, 0.5 );
+
+}
+
+.icon {
+  background-color: #aaa;
+}
+
+.right a {
+  color: rgb(0, 0, 0);
+  text-decoration: dashed;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.footer {
+  width: 70%;
+  margin: auto;
+  border-radius: 25px 25px 0px 0px / 25px 25px 0px 0px;    
+  padding: 20px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.377);
+}
+
+.regionselect {
+  display: grid;
+  margin: auto;
+  height: 82px;
+  width: 100%;
+  grid-template-columns: 30% 15% 30% 10% auto;
+  padding: 15px;
+  background-color: rgba( 255, 255, 255, 0 );
+}
+
+.regionselect > div {
+  background-color: rgba( 255, 255, 255, 0 );
+  text-align: center;
+  font-size: 30px;
+}
+
+.currentDateColumn {
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.currentDate {
+  background-color: rgba( 255, 255, 255, 0 );
+  color:rgb(255, 255, 255);
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  border: 0px;
+  height: 100%;
+  width: 100%;
+}
+
+.regionNameColumn {
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.regionDrop {
+  background-color: rgba( 255, 255, 255, 0 );
+  border: 0px;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  font-size: 23px;
+  color: rgb(255, 255, 255);
+}
+
+.regionDropOption {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.regionWeatherResultColumn {
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.regionWeatherResult {
+  background-color: rgba( 255, 255, 255, 0 );
+  color:rgb(255, 255, 255);
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  border: 0px;
+  height: 100%;
+  width: 100%;
+}
+
+.MainPageWeatherIconColumn {
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  color:rgb(255, 255, 255);
+}
+
+.MainPageWeatherIcon {
+  vertical-align: middle;
+  font-size: 32px;
+  color:  rgb(255, 255, 255);
+}
+
+.MainPageUpdateIcon {
+  background-color: rgba( 255, 255, 255, 0 );
+  color:rgb(255, 255, 255);
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  border: 0px;
+  height: 100%;
+  width: 100%;
+}
+
+.MainPageSelectButtonColumn {
+padding-left: 30px;
+}
+
+.MainPageSelectButton {
+  height: 100%;
+  width: 100%;
+  border: 0px;
+  background: linear-gradient(to right, rgb(94, 190, 235), rgb(84, 115, 239));
+  border-radius: 10px;
+  color: rgb(255, 255, 255);
+  font-size: 23px;
+}
+
+@media screen and (max-width: 800px) {
+  .leftcolumn,
+  .rightcolumn {
+    width: 100%;
+    padding: 0;
+  }
+}
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child), .dropdown .dropbtn {
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .topnav.responsive .dropdown {float: none;}
+  .topnav.responsive .observation-content {position: relative;}
+  .topnav.responsive .dropdown .dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}

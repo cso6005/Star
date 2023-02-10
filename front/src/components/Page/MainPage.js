@@ -94,7 +94,7 @@ const Main = () => {
         </div>
       </div>
 
-      <div className="blank" style={{ height: "207px" }}></div>
+      <div className="blank" style={{ height: "239px" }}></div>
 
       <div className="footer">
         <div className="regionselect">

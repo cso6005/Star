@@ -75,7 +75,6 @@
     width: 200px;
     left: 5%;
     top: 0%;
-    /* cursor: pointer; */
 }
 
 .dropdown ul {
@@ -86,14 +85,11 @@
   
   
 .dropdown-content{
-  /* display: none; */
   position: absolute;
   z-index: 1;
-  /* font-weight: 400; */
   border-radius: 4px;
   background-color: #f5f5f56e;
   min-width: 200px;
-  /* min-height: 17px; */
   top: 110%;
   left: 14%;
 
@@ -120,7 +116,6 @@
   grid-template-rows: 6% 2% 54%;
   color: white;
   white-space: pre-wrap;
-  /* line-height: 180%; */
   text-align: right;
   padding-right: 6.5%;
   padding-top: 9%;
@@ -135,8 +130,6 @@
   font-size: 16px;
   color: white;
   font-weight: bold;
-  /* padding-top: 0%; */
-  /* padding-left: 0%; */
   text-align: left;
 }
 

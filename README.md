@@ -163,17 +163,18 @@ ElasticStack 을 이용한 별 관측 정보 제공 웹 애플리케이션
     - 일반 데이터 관리 DB `Mysql`, 로우 데이터 관리  `Elasticsearch` , `Logstash`구축
     - `JPA` 사용하여 DB와 통신
     - Front 와 `JSON` 포맷 데이터 통신
-    - `enum` 로 exception 통합적으로 관리
+    - `enum` 로 exception 통합 관리
     - HTTP 에러 `exceptionHandler`  처리와 `customExceptionHandler`  처리로 error payload 재정의
     - Logback 처리로 서버 내 로그 수집
     - `Junit`, `Postman` 을 통해 `Test` & `debugging`
-    - `Postman Collection`으로 api 요청 통합 관리
-    
+    - `Postman Collection` 으로 api 요청 통합 관리
+
+- **DataSearch**
     - 작업 스케쥴러로 기상청 공공 데이터 `crawling` 자동화 설정
     - 데이터 검색 및 분석을 위해 `ElasticSearch`, `Logstash` 사용
     - `ETL 파이프라인` 적용
     - Spring Boot에서 `JavaRestHighLevelClient` API 를 이용하여 Elastic Search 데이터 가져오기
-    
+
 **✔️ 기능 구현 영상**
 
 - **Observing Stars - 지역 검색 시, 별 관측 정보 제공 기능**

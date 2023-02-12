@@ -88,8 +88,7 @@ ElasticStack 을 이용한 별 관측 정보 제공 웹 애플리케이션
 
 - **Front**
 
-<img src="https://img.shields.io/badge/React-1DAFB?style=flat&logo=React&logoColor=white"> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=JavaScript&logoColor=white">
-
+<img src="https://img.shields.io/badge/React-1DAFB?style=flat&logo=React&logoColor=white"> <img src="https://img.shields.io/badge/Next.js-#000000?style=flat&logo=Next.js&logoColor=white"> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=JavaScript&logoColor=white">  
 
 - **DB**
 
